@@ -1,0 +1,526 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  height: 100hv;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+main {
+  position: relative;
+  top: 70px;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  z-index: 150;
+  margin: 0 auto;
+}
+nav .brand {
+  position: fixed;
+  font-family: "Montserrat Alternates", sans-serif;
+  line-height: 70px;
+  text-decoration: none;
+  padding: 0 15px 15px 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #C7B7CD;
+  border-radius: 0 0 15px 15px;
+}
+nav .menu {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+nav .menu .menu-item {
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+  line-height: 70px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+}
+nav .menu .menu-item.signet {
+  line-height: 350px;
+}
+nav .menu .menu-item a {
+  color: #302c2d;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+nav .menu .menu-item a span {
+  list-style-type: none;
+}
+nav .menu .menu-item:hover {
+  cursor: pointer;
+  background-color: #C7B7CD;
+  color: #fff;
+}
+nav .menu .menu-item:hover a {
+  color: #fff;
+}
+
+.box {
+  top: 15px;
+  right: 15px;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  z-index: 200;
+  display: none;
+}
+
+.cont-lignes {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lignes {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background: #000;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+.lignes:nth-child(1) {
+  top: 0px;
+}
+
+.lignes:nth-child(2) {
+  top: 15px;
+}
+
+.lignes:nth-child(3) {
+  top: 30px;
+}
+
+.btn1.active .lignes:nth-child(1) {
+  top: 15px;
+  transform: rotate(135deg);
+}
+
+.btn1.active .lignes:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.btn1.active .lignes:nth-child(3) {
+  top: 15px;
+  transform: rotate(-135deg);
+}
+
+@media screen and (max-width: 750px) {
+  .box {
+    display: block;
+  }
+
+  nav .brand {
+    z-index: 120;
+  }
+  nav .menu {
+    display: none;
+    flex-direction: column;
+  }
+  nav .menu.active {
+    display: block;
+    width: 100%;
+    background-color: rgba(245, 245, 245, 0.7);
+  }
+  nav .menu .menu-item {
+    position: relative;
+    top: 70px;
+    border-bottom: 1px dotted #C7B7CD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    opacity: 0.95;
+    border-radius: 0;
+  }
+  nav .menu .menu-item a {
+    font-weight: 700;
+  }
+  nav .menu .menu-item:nth-child(3) {
+    border-radius: 0 0 15px 15px;
+  }
+}
+.accueil {
+  background-color: #4E4351;
+  height: 100vh;
+}
+.accueil .hero {
+  height: 85vh;
+  background-image: url(/ressources/still-life-book-candle-wooden-wall.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.accueil h1 {
+  font-family: "Kalam", cursive;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 3rem;
+  color: white;
+  text-align: end;
+  padding-top: 5%;
+  margin: 0 20%;
+  text-shadow: 2px 2px 0 #9A6FA6;
+}
+.accueil p {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
+  margin: 0 20%;
+  padding: 20px 0;
+  font-size: 1.8rem;
+  color: #9A6FA6;
+  font-weight: bold;
+}
+.accueil .btn-accueil {
+  display: flex;
+  margin: 10px 20% 0 auto;
+  border-radius: 999px;
+  justify-content: center;
+  width: 200px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #9A6FA6;
+  text-decoration: none;
+  background-color: #FFF3FF;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.accueil .btn-accueil:hover {
+  background-color: #C7B7CD;
+  color: #fff;
+}
+.accueil .infolettre {
+  height: 15vh;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.accueil .infolettre h2 {
+  color: #fff;
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+.accueil .infolettre p {
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
+  margin: 0 20%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+.accueil .infolettre p a {
+  text-decoration: none;
+  color: white;
+  box-shadow: 2px 2px 2px #B06E51;
+  border: 1px solid #B06E51;
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 1px #333;
+  background-color: #B06E51;
+}
+.accueil .infolettre p a:hover {
+  background-color: #4E4351;
+  text-shadow: 2px 2px 3px #B06E51;
+}
+
+@media screen and (min-width: 1740px) {
+  .accueil h1 {
+    margin: 0 5% 0 25%;
+  }
+  .accueil p {
+    margin: 0 30%;
+  }
+  .accueil .btn-accueil {
+    margin: 10px 30% 0 auto;
+  }
+}
+@media screen and (max-width: 850px) {
+  .accueil h1, .accueil p {
+    margin: 0 10% 0 20%;
+  }
+  .accueil h1 {
+    font-size: 3rem;
+  }
+  .accueil p {
+    font-size: 1.5rem;
+  }
+  .accueil .btn-accueil {
+    margin: 10px 10% 0 auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  .accueil .infolettre {
+    justify-content: center;
+  }
+  .accueil .infolettre h2 {
+    display: none;
+  }
+  .accueil .infolettre p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .accueil .infolettre p a {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .accueil h1 {
+    padding-top: 10%;
+    font-size: 2.2rem;
+  }
+  .accueil p {
+    display: none;
+  }
+}
+.livres .bloc-titre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 0 3rem 0;
+  flex-direction: column;
+}
+.livres .bloc-titre h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 2rem;
+  height: 50px;
+  margin: 1rem;
+}
+.livres .bloc-titre p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+.livres .cartes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.livres .cartes .carte {
+  width: 350px;
+  border-radius: 5px;
+  margin: 15px 30px;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 5px 15px #C7B7CD;
+  transition: all 0.2s ease-in-out;
+}
+.livres .cartes .carte:hover {
+  transform: translateY(-5px);
+}
+.livres .cartes .carte h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #9A6FA6;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+.livres .cartes .carte h4 {
+  font-size: 1.1rem;
+  padding: 0 1rem;
+}
+.livres .cartes .carte p {
+  font-size: 1rem;
+  padding: 1rem;
+}
+.livres .cartes .carte .lien-carte {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  padding: 0.8rem;
+  color: #9A6FA6;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px dotted #9A6FA6;
+  box-shadow: 1px 1px 1px #9A6FA6;
+  border-radius: 999px;
+  width: max-content;
+  cursor: pointer;
+  background-color: #FFF3FF;
+  transition: all 0.2s ease-in-out;
+  margin: 20px auto;
+}
+.livres .cartes .carte .lien-carte:hover {
+  background-color: #C7B7CD;
+  color: #fff;
+}
+.livres .cartes .centre {
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 750px) {
+  .livres .cartes .carte.centre {
+    margin-top: 15px;
+  }
+}
+.inscription {
+  height: 100vh;
+  width: 100%;
+  margin-top: 6rem;
+  background-image: url(/ressources/olia-gozha-J4kK8b9Fgj8-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.inscription .cont-inscription {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  position: relative;
+  left: 20%;
+  top: 50%;
+  max-width: 425px;
+  padding: 1rem;
+  border-radius: 15px;
+  background: rgba(199, 183, 205, 0.2);
+  box-shadow: 2px 2px 10px #C7B7CD;
+}
+.inscription .cont-inscription h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.inscription .cont-inscription p {
+  width: 400px;
+  padding: 1rem 0;
+}
+.inscription .cont-inscription a {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  padding: 0.8rem;
+  color: #9A6FA6;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px dotted #9A6FA6;
+  box-shadow: 1px 1px 1px #9A6FA6;
+  border-radius: 999px;
+  width: max-content;
+  cursor: pointer;
+  background-color: #FFF3FF;
+  transition: all 0.2s ease-in-out;
+}
+.inscription .cont-inscription a:hover {
+  background-color: #C7B7CD;
+  color: #fff;
+}
+
+@media screen and (max-width: 740px) {
+  .inscription .cont-inscription {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 350px;
+    background: rgba(199, 183, 205, 0.7);
+  }
+  .inscription .cont-inscription p {
+    max-width: 300px;
+    font-weight: 500;
+  }
+}
+.entrevues {
+  height: auto;
+  width: 100%;
+}
+.entrevues .bloc-titre {
+  text-align: center;
+  padding: 6rem 0 3rem 0;
+  flex-direction: column;
+}
+.entrevues .bloc-titre h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 2rem;
+  height: 50px;
+  margin: 1rem;
+}
+.entrevues .bloc-titre p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+.entrevues .cartes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+.entrevues .cartes .carte {
+  width: 350px;
+  border-radius: 5px;
+  margin: 15px 30px;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 5px 15px #C7B7CD;
+  transition: all 0.2s ease-in-out;
+  width: 28%;
+  justify-content: space-between;
+}
+.entrevues .cartes .carte .bloc-txt {
+  position: relative;
+}
+.entrevues .cartes .carte .bloc-txt h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #9A6FA6;
+  font-size: 1.2rem;
+  padding-top: 20px;
+}
+.entrevues .cartes .carte .bloc-txt p {
+  padding: 15px 0;
+}
+.entrevues .cartes .carte .bloc-txt .lien-carte {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  padding: 0.8rem;
+  color: #9A6FA6;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px dotted #9A6FA6;
+  box-shadow: 1px 1px 1px #9A6FA6;
+  border-radius: 999px;
+  width: max-content;
+  cursor: pointer;
+  background-color: #FFF3FF;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 30px;
+}
+.entrevues .cartes .carte .bloc-txt .lien-carte:hover {
+  background-color: #C7B7CD;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
