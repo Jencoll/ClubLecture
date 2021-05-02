@@ -1,88 +1,8 @@
 // Variables
-$couleur-titre: #9A6FA6;
-$couleur-txt-base: #302c2d;
-$couleur-fond: #FFF3FF;
-$couleur-fond-marque: #888275;
-$couleur-menu: #C7B7CD;
-$couleur-infolettre: #4E4351;
-$blanc: #fff;
-$police-titre: 'Montserrat Alternates', sans-serif;
-$police-txt: 'Raleway', sans-serif;
-$police-citations: 'Kalam', cursive;
+@import './styles/variables.scss';
 
 // Mixins
-@mixin flex-centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin titre-sections {
-    text-align: center;
-    padding: 6rem 0 3rem 0;
-    flex-direction: column;
-}
-
-@mixin h2 {
-    font-family: $police-titre;
-    font-size: 2rem;
-    height: 50px;
-    margin: 1rem;
-}
-
-@mixin h3 {
-    font-family: $police-titre;
-    color: $couleur-titre;
-    font-size: 1.2rem;
-}
-
-@mixin sous-titre-sections {
-    font-family: $police-txt;
-    font-size: 1.2rem;
-}
-
-@mixin btn-general {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    padding: 0.8rem;
-    color: $couleur-titre;
-    font-weight: 700;
-    text-decoration: none;
-    border: 1px dotted $couleur-titre;
-    box-shadow: 1px 1px 1px $couleur-titre;
-    border-radius: 999px;
-    width: max-content;
-    cursor: pointer;
-    background-color: $couleur-fond;
-    transition: all 0.2s ease-in-out;
-
-    &:hover {
-        background-color: $couleur-menu;
-        color: $blanc;
-    }
-}
-
-@mixin cartes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-@mixin carte-indiv {
-    width: 350px;
-    border-radius: 5px;
-    margin: 15px 30px;
-    cursor: pointer;
-    position: relative;
-    padding: 1rem;
-    box-shadow: 0 5px 15px $couleur-menu;
-    transition: all 0.2s ease-in-out;
-}
-
-
-// Fonctions
-
+@import './styles/mixins.scss';
 
 // Universel
 *, ::before, ::after {
@@ -94,7 +14,7 @@ $police-citations: 'Kalam', cursive;
 html, body {
     font-family: $police-txt;
     width: 100%;
-    height: 100hv;
+    height: 100vh;
     font-size: 16px;
     scroll-behavior: smooth;
 }
@@ -115,16 +35,16 @@ nav {
     position: fixed;
     width: 100%;
     height: 70px;
+    margin: 0 auto;
     background-color: $blanc;
     z-index: 150;
-    margin: 0 auto;
 
     .brand {
         position: fixed;
-        font-family: $police-titre;
         line-height: 70px;
-        text-decoration: none;
         padding: 0 15px 15px 15px;
+        font-family: $police-titre;
+        text-decoration: none;
         font-size: 2rem;
         font-weight: bold;
         color: $blanc;
@@ -138,8 +58,6 @@ nav {
         width: 100%;
         align-items: center;
         justify-content: flex-end;
-        // position: fixed;
-        // z-index: 149;
 
         .menu-item {
             display: inline-block;
@@ -256,10 +174,10 @@ nav {
             }
 
             .menu-item {
+                @include flex-centered;
                 position: relative;
                 top: 70px;
                 border-bottom: 1px dotted $couleur-menu;
-                @include flex-centered;
                 background-color: $blanc;
                 opacity: 0.95;
                 border-radius: 0;
@@ -284,30 +202,28 @@ nav {
 
     .hero {
         height: 85vh;
-        background-image: url(/ressources/still-life-book-candle-wooden-wall.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
+        @include img-hero;
     }
 
     h1 {
-        font-family: $police-citations;
         display: flex;
         justify-content: flex-end;
+        padding-top: 5%;
+        margin: 0 20%;
+        font-family: $police-citations;
         font-size: 3rem;
         color: white;
         text-align: end;
-        padding-top: 5%;
-        margin: 0 20%;
         text-shadow: 2px 2px 0 $couleur-titre;
     }
 
     p {
-        font-family: $police-titre;
         display: flex;
         justify-content: flex-end;
         text-align: end;
         margin: 0 20%;
         padding: 20px 0;
+        font-family: $police-titre;
         font-size: 1.8rem;
         color: $couleur-titre;
         font-weight: bold;
@@ -315,11 +231,11 @@ nav {
 
     .btn-accueil {
         display: flex;
-        margin: 10px 20% 0 auto;
-        border-radius: 999px;
-        justify-content: center;
         width: 200px;
+        margin: 10px 20% 0 auto;
         padding: 15px;
+        justify-content: center;
+        border-radius: 999px;
         font-size: 20px;
         font-weight: 700;
         color: $couleur-titre;
@@ -358,11 +274,11 @@ nav {
             font-size: 1.5rem;
 
             a {
+                padding: 5px 20px;
                 text-decoration: none;
                 color: white;
                 box-shadow: 2px 2px 2px #B06E51;
                 border: 1px solid #B06E51;
-                padding: 5px 20px;
                 border-radius: 5px;
                 text-shadow: 1px 1px 1px #333;
                 background-color: #B06E51;
@@ -448,7 +364,7 @@ nav {
 
 
 // Section Livres du mois
-.livres {
+.livres, .contenu {
     .bloc-titre {
         @include flex-centered;
         @include titre-sections;
@@ -475,6 +391,7 @@ nav {
             h3 {
                 @include h3;
                 padding: 1rem;
+                font-size: 1.3rem;
             }
 
             h4 {
@@ -501,7 +418,7 @@ nav {
 
 
 @media screen and (max-width: 750px) {
-    .livres .cartes .carte.centre {
+    .livres .cartes .carte {
         margin-top: 15px;
     }
 }
@@ -561,8 +478,6 @@ nav {
 
 // Section Entrevues
 .entrevues {
-    height: auto;
-    width: 100%;
 
     .bloc-titre {
         @include titre-sections;
@@ -580,45 +495,213 @@ nav {
 
     .cartes {
         @include cartes;
-        height: auto;
-        width: 100%;
 
         .carte {
             @include carte-indiv;
-            width: 28%;
-            justify-content: space-between;
+            box-shadow: none;
+
+            &.centre {
+                align-self: center;
+            }
 
             .bloc-txt {
                 position: relative;
+                padding: 20px 0;
 
                 h3 {
                     @include h3;
-                    padding-top: 20px;;
+                    padding-top: 20px;
+                    font-size: 1.5rem;
                 }
 
                 p {
-                    padding: 15px 0;
+                    padding: 30px 0;
                 }
 
                 .lien-carte {
                     @include btn-general;
-                    margin-bottom: 30px;
+                    margin: 15px 0;
                 }
             }
 
             .bloc-img {
+                margin: 40px 0;
 
-
-
-                // img {
-                //     width: 350px;
-                //     margin: 0 auto;
-                //     bottom: 30px;
-                //     position: absolute;
-                //     left: 50%;
-                //     transform: translateX(-50%);
-                // }
+                img {
+                    box-shadow: 14px 12px 2px #c7b7cd;
+                    max-height: 600px;
+                    object-fit: cover;
+                }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .entrevues
+
+        .cartes {
+            .carte {
+                padding: 1rem;
+            }
+        }
+}
+
+@media screen and (max-width: 555px) {
+    .entrevues {
+        .bloc-titre p {
+            padding-top: 30px;
+        }
+    }
+}
+
+// Section contact
+.contact {
+    .bloc-titre {
+        @include titre-sections;
+
+        h2 {
+            @include h2;
+        }
+
+        p {
+            max-width: 700px;
+            margin: 0 auto;
+            @include sous-titre-sections;
+        }
+    }
+
+    .formulaire {
+        margin: 0 auto;
+        width: 70%;
+
+        .groupe-form {
+            position: relative;
+            margin-bottom: 45px;
+
+            label {
+                color:$couleur-titre;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            input {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                border: none;
+                outline: none;
+                background: none;
+                border-bottom: 3px solid $couleur-menu;
+                font-size: 1.2rem;
+            }
+
+            textarea {
+                width: 100%;
+                height: 200px;
+                border: 3px solid $couleur-menu;
+                border-radius: 3px;
+                resize: none;
+                padding: 5px;
+                outline: none;
+                font-size: 1.2rem;
+            }
+
+            .button-sub {
+                display: block;
+                margin: 0 auto;
+                width: auto;
+                padding: 15px 60px;
+                border: 3px solid $couleur-menu;
+                border-radius: 999px;
+                background-image: linear-gradient(to right, transparent 50%, $couleur-titre 50%);
+                background-size: 200%;
+                color: $couleur-titre;
+                font-size: 1.5rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.4s ease-in-out;
+
+                &:hover {
+                    color: $blanc;
+                    background-position: 100%;
+                    border: 3px solid $blanc;
+                }
+            }
+        }
+
+        .groupe-form:nth-child(4) {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .contact {
+        .bloc-titre p {
+            padding-top: 30px;
+        }
+    }
+}
+
+// Footer
+footer {
+    border-top: 1px solid $couleur-menu;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+// Page auteurs
+.bandeau {
+    background-color: $blanc;
+
+    .bandeau-img {
+        height: 30vh;
+        @include img-hero;
+    }
+}
+
+.art-entrevue {
+    width: 75%;
+    margin: auto;
+
+    img {
+        float: left;
+        width: 375px;
+        box-shadow: 14px 12px 2px #c7b7cd;
+        margin: 0 40px 40px 0;
+    }
+
+    .bloc-entrevue {
+        margin: 0 20px;
+
+        h3 {
+            @include h3;
+            font-size: 1.5rem;
+            padding-bottom: 15px;
+        }
+
+        h4 {
+            padding-bottom: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        p {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .art-entrevue {
+        width: 90%;
+
+        img {
+            width: 330px;
+            margin: 0 auto 40px auto;
         }
     }
 }

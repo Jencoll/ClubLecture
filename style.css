@@ -7,7 +7,7 @@
 html, body {
   font-family: "Raleway", sans-serif;
   width: 100%;
-  height: 100hv;
+  height: 100vh;
   font-size: 16px;
   scroll-behavior: smooth;
 }
@@ -27,16 +27,16 @@ nav {
   position: fixed;
   width: 100%;
   height: 70px;
+  margin: 0 auto;
   background-color: #fff;
   z-index: 150;
-  margin: 0 auto;
 }
 nav .brand {
   position: fixed;
-  font-family: "Montserrat Alternates", sans-serif;
   line-height: 70px;
-  text-decoration: none;
   padding: 0 15px 15px 15px;
+  font-family: "Montserrat Alternates", sans-serif;
+  text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
@@ -152,12 +152,12 @@ nav .menu .menu-item:hover a {
     background-color: rgba(245, 245, 245, 0.7);
   }
   nav .menu .menu-item {
-    position: relative;
-    top: 70px;
-    border-bottom: 1px dotted #C7B7CD;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 70px;
+    border-bottom: 1px dotted #C7B7CD;
     background-color: #fff;
     opacity: 0.95;
     border-radius: 0;
@@ -180,34 +180,34 @@ nav .menu .menu-item:hover a {
   background-repeat: no-repeat;
 }
 .accueil h1 {
-  font-family: "Kalam", cursive;
   display: flex;
   justify-content: flex-end;
+  padding-top: 5%;
+  margin: 0 20%;
+  font-family: "Kalam", cursive;
   font-size: 3rem;
   color: white;
   text-align: end;
-  padding-top: 5%;
-  margin: 0 20%;
   text-shadow: 2px 2px 0 #9A6FA6;
 }
 .accueil p {
-  font-family: "Montserrat Alternates", sans-serif;
   display: flex;
   justify-content: flex-end;
   text-align: end;
   margin: 0 20%;
   padding: 20px 0;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 1.8rem;
   color: #9A6FA6;
   font-weight: bold;
 }
 .accueil .btn-accueil {
   display: flex;
-  margin: 10px 20% 0 auto;
-  border-radius: 999px;
-  justify-content: center;
   width: 200px;
+  margin: 10px 20% 0 auto;
   padding: 15px;
+  justify-content: center;
+  border-radius: 999px;
   font-size: 20px;
   font-weight: 700;
   color: #9A6FA6;
@@ -243,11 +243,11 @@ nav .menu .menu-item:hover a {
   font-size: 1.5rem;
 }
 .accueil .infolettre p a {
+  padding: 5px 20px;
   text-decoration: none;
   color: white;
   box-shadow: 2px 2px 2px #B06E51;
   border: 1px solid #B06E51;
-  padding: 5px 20px;
   border-radius: 5px;
   text-shadow: 1px 1px 1px #333;
   background-color: #B06E51;
@@ -306,7 +306,7 @@ nav .menu .menu-item:hover a {
     display: none;
   }
 }
-.livres .bloc-titre {
+.livres .bloc-titre, .contenu .bloc-titre {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,75 +314,73 @@ nav .menu .menu-item:hover a {
   padding: 6rem 0 3rem 0;
   flex-direction: column;
 }
-.livres .bloc-titre h2 {
+.livres .bloc-titre h2, .contenu .bloc-titre h2 {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 2rem;
   height: 50px;
   margin: 1rem;
 }
-.livres .bloc-titre p {
+.livres .bloc-titre p, .contenu .bloc-titre p {
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
+  padding: 0 10px;
 }
-.livres .cartes {
+.livres .cartes, .contenu .cartes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
-.livres .cartes .carte {
-  width: 350px;
+.livres .cartes .carte, .contenu .cartes .carte {
+  width: 375px;
   border-radius: 5px;
-  margin: 15px 30px;
-  cursor: pointer;
   position: relative;
-  padding: 1rem;
   box-shadow: 0 5px 15px #C7B7CD;
   transition: all 0.2s ease-in-out;
 }
-.livres .cartes .carte:hover {
+.livres .cartes .carte:hover, .contenu .cartes .carte:hover {
   transform: translateY(-5px);
 }
-.livres .cartes .carte h3 {
+.livres .cartes .carte h3, .contenu .cartes .carte h3 {
   font-family: "Montserrat Alternates", sans-serif;
   color: #9A6FA6;
-  font-size: 1.2rem;
   padding: 1rem;
+  font-size: 1.3rem;
 }
-.livres .cartes .carte h4 {
+.livres .cartes .carte h4, .contenu .cartes .carte h4 {
   font-size: 1.1rem;
   padding: 0 1rem;
 }
-.livres .cartes .carte p {
+.livres .cartes .carte p, .contenu .cartes .carte p {
   font-size: 1rem;
   padding: 1rem;
 }
-.livres .cartes .carte .lien-carte {
+.livres .cartes .carte .lien-carte, .contenu .cartes .carte .lien-carte {
   display: block;
-  text-align: center;
-  font-size: 18px;
-  padding: 0.8rem;
-  color: #9A6FA6;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px dotted #9A6FA6;
-  box-shadow: 1px 1px 1px #9A6FA6;
-  border-radius: 999px;
   width: max-content;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #9A6FA6;
+  border: 1px dotted #9A6FA6;
+  border-radius: 999px;
+  box-shadow: 1px 1px 1px #9A6FA6;
   cursor: pointer;
   background-color: #FFF3FF;
   transition: all 0.2s ease-in-out;
   margin: 20px auto;
 }
-.livres .cartes .carte .lien-carte:hover {
+.livres .cartes .carte .lien-carte:hover, .contenu .cartes .carte .lien-carte:hover {
   background-color: #C7B7CD;
   color: #fff;
 }
-.livres .cartes .centre {
+.livres .cartes .centre, .contenu .cartes .centre {
   margin-top: 100px;
 }
 
 @media screen and (max-width: 750px) {
-  .livres .cartes .carte.centre {
+  .livres .cartes .carte {
     margin-top: 15px;
   }
 }
@@ -417,16 +415,16 @@ nav .menu .menu-item:hover a {
 }
 .inscription .cont-inscription a {
   display: block;
-  text-align: center;
-  font-size: 18px;
-  padding: 0.8rem;
-  color: #9A6FA6;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px dotted #9A6FA6;
-  box-shadow: 1px 1px 1px #9A6FA6;
-  border-radius: 999px;
   width: max-content;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #9A6FA6;
+  border: 1px dotted #9A6FA6;
+  border-radius: 999px;
+  box-shadow: 1px 1px 1px #9A6FA6;
   cursor: pointer;
   background-color: #FFF3FF;
   transition: all 0.2s ease-in-out;
@@ -449,10 +447,6 @@ nav .menu .menu-item:hover a {
     font-weight: 500;
   }
 }
-.entrevues {
-  height: auto;
-  width: 100%;
-}
 .entrevues .bloc-titre {
   text-align: center;
   padding: 6rem 0 3rem 0;
@@ -469,58 +463,211 @@ nav .menu .menu-item:hover a {
   margin: 0 auto;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
+  padding: 0 10px;
 }
 .entrevues .cartes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  height: auto;
-  width: 100%;
+  justify-content: space-evenly;
 }
 .entrevues .cartes .carte {
-  width: 350px;
+  width: 375px;
   border-radius: 5px;
-  margin: 15px 30px;
-  cursor: pointer;
   position: relative;
-  padding: 1rem;
   box-shadow: 0 5px 15px #C7B7CD;
   transition: all 0.2s ease-in-out;
-  width: 28%;
-  justify-content: space-between;
+  box-shadow: none;
+}
+.entrevues .cartes .carte.centre {
+  align-self: center;
 }
 .entrevues .cartes .carte .bloc-txt {
   position: relative;
+  padding: 20px 0;
 }
 .entrevues .cartes .carte .bloc-txt h3 {
   font-family: "Montserrat Alternates", sans-serif;
   color: #9A6FA6;
-  font-size: 1.2rem;
   padding-top: 20px;
+  font-size: 1.5rem;
 }
 .entrevues .cartes .carte .bloc-txt p {
-  padding: 15px 0;
+  padding: 30px 0;
 }
 .entrevues .cartes .carte .bloc-txt .lien-carte {
   display: block;
-  text-align: center;
-  font-size: 18px;
-  padding: 0.8rem;
-  color: #9A6FA6;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px dotted #9A6FA6;
-  box-shadow: 1px 1px 1px #9A6FA6;
-  border-radius: 999px;
   width: max-content;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #9A6FA6;
+  border: 1px dotted #9A6FA6;
+  border-radius: 999px;
+  box-shadow: 1px 1px 1px #9A6FA6;
   cursor: pointer;
   background-color: #FFF3FF;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 30px;
+  margin: 15px 0;
 }
 .entrevues .cartes .carte .bloc-txt .lien-carte:hover {
   background-color: #C7B7CD;
   color: #fff;
+}
+.entrevues .cartes .carte .bloc-img {
+  margin: 40px 0;
+}
+.entrevues .cartes .carte .bloc-img img {
+  box-shadow: 14px 12px 2px #c7b7cd;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1250px) {
+  .entrevues .cartes .carte {
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 555px) {
+  .entrevues .bloc-titre p {
+    padding-top: 30px;
+  }
+}
+.contact .bloc-titre {
+  text-align: center;
+  padding: 6rem 0 3rem 0;
+  flex-direction: column;
+}
+.contact .bloc-titre h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 2rem;
+  height: 50px;
+  margin: 1rem;
+}
+.contact .bloc-titre p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+.contact .formulaire {
+  margin: 0 auto;
+  width: 70%;
+}
+.contact .formulaire .groupe-form {
+  position: relative;
+  margin-bottom: 45px;
+}
+.contact .formulaire .groupe-form label {
+  color: #9A6FA6;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.contact .formulaire .groupe-form input {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  background: none;
+  border-bottom: 3px solid #C7B7CD;
+  font-size: 1.2rem;
+}
+.contact .formulaire .groupe-form textarea {
+  width: 100%;
+  height: 200px;
+  border: 3px solid #C7B7CD;
+  border-radius: 3px;
+  resize: none;
+  padding: 5px;
+  outline: none;
+  font-size: 1.2rem;
+}
+.contact .formulaire .groupe-form .button-sub {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  padding: 15px 60px;
+  border: 3px solid #C7B7CD;
+  border-radius: 999px;
+  background-image: linear-gradient(to right, transparent 50%, #9A6FA6 50%);
+  background-size: 200%;
+  color: #9A6FA6;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.contact .formulaire .groupe-form .button-sub:hover {
+  color: #fff;
+  background-position: 100%;
+  border: 3px solid #fff;
+}
+.contact .formulaire .groupe-form:nth-child(4) {
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 555px) {
+  .contact .bloc-titre p {
+    padding-top: 30px;
+  }
+}
+footer {
+  border-top: 1px solid #C7B7CD;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.bandeau {
+  background-color: #fff;
+}
+.bandeau .bandeau-img {
+  height: 30vh;
+  background-image: url(/ressources/still-life-book-candle-wooden-wall.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.art-entrevue {
+  width: 75%;
+  margin: auto;
+}
+.art-entrevue img {
+  float: left;
+  width: 375px;
+  box-shadow: 14px 12px 2px #c7b7cd;
+  margin: 0 40px 40px 0;
+}
+.art-entrevue .bloc-entrevue {
+  margin: 0 20px;
+}
+.art-entrevue .bloc-entrevue h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #9A6FA6;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+.art-entrevue .bloc-entrevue h4 {
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.art-entrevue .bloc-entrevue p {
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 480px) {
+  .art-entrevue {
+    width: 90%;
+  }
+  .art-entrevue img {
+    width: 330px;
+    margin: 0 auto 40px auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
