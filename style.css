@@ -175,7 +175,7 @@ nav .menu .menu-item:hover a {
 }
 .accueil .hero {
   height: 85vh;
-  background-image: url(/ressources/still-life-book-candle-wooden-wall.jpg);
+  background-image: url(ressources/still-life-book-candle-wooden-wall.jpg);
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -627,7 +627,7 @@ footer {
 }
 .bandeau .bandeau-img {
   height: 30vh;
-  background-image: url(/ressources/still-life-book-candle-wooden-wall.jpg);
+  background-image: url(ressources/still-life-book-candle-wooden-wall.jpg);
   background-position: center;
   background-repeat: no-repeat;
 }
